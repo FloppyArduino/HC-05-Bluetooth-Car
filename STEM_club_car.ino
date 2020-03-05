@@ -54,7 +54,7 @@ void MoveBack(int driveSpeed){
   digitalWrite(motor[4],LOW);
   digitalWrite(motor[5],HIGH);
 }
-void TrunLeft(int turnSpeed, int driveSpeed,int motorDir){
+void TurnLeft(int turnSpeed, int driveSpeed,int motorDir){
   switch(motorDir){
   case 1://foward
     Serial.println("Left Foward");
@@ -77,7 +77,7 @@ void TrunLeft(int turnSpeed, int driveSpeed,int motorDir){
   }
 }
 
-void TrunRight(int turnSpeed, int driveSpeed,int motorDir){
+void TurnRight(int turnSpeed, int driveSpeed,int motorDir){
   switch(motorDir){
     case 1://foward
       Serial.println("Right Foward");
@@ -158,7 +158,7 @@ if (F ==1 && Received == 70)
 //-------------------------------------------------------------------// 
 if (FL == 0 && Received == 49)
   {
-    TrunLeft(Turn,Drive,1);//calls TurnLeft block with 1st num for turn speed and 2nd num for drive speed and 3rd is for direction(0=back 1=foward)
+    TurnLeft(Turn,Drive,1);//calls TurnLeft block with 1st num for turn speed and 2nd num for drive speed and 3rd is for direction(0=back 1=foward)
     FL=1;
     Received=0;  
   }
@@ -171,7 +171,7 @@ if (FL ==1 && Received == 49)
 //-------------------------------------------------------------------// 
 if (FR == 0 && Received == 76)
   {
-    TrunRight(Turn,Drive,1);//calls TurnRight block with 1st num for turn speed and 2nd num for drive speed 3rd is for direction(0=back 1=foward)
+    TurnRight(Turn,Drive,1);//calls TurnRight block with 1st num for turn speed and 2nd num for drive speed 3rd is for direction(0=back 1=foward)
     FR=1;
     Received=0;  
   }
@@ -184,7 +184,7 @@ if (FR ==1 && Received == 76)
 //----------------------------backwards controls---------------------------//
 if (BR == 0 && Received == 82)
   {
-    TrunRight(Turn,Drive,0);//calls TurnRight block with 1st num for turn speed and 2nd num for drive speed 3rd is for direction(0=back 1=foward)
+    TurnRight(Turn,Drive,0);//calls TurnRight block with 1st num for turn speed and 2nd num for drive speed 3rd is for direction(0=back 1=foward)
     BR=1;
     Received=0;  
   }
@@ -197,7 +197,7 @@ if (BR ==1 && Received == 82)
 //-------------------------------------------------------------------//
 if (BL == 0 && Received == 66)
   {
-    TrunLeft(Turn,Drive,0);//calls TurnRight block with 1st num for turn speed and 2nd num for drive speed 3rd is for direction(0=back 1=foward)
+    TurnLeft(Turn,Drive,0);//calls TurnRight block with 1st num for turn speed and 2nd num for drive speed 3rd is for direction(0=back 1=foward)
     BL=1;
     Received=0;  
   }
